@@ -1,0 +1,28 @@
+﻿<Window x:Class="WPFMiniProject.AddressWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFMiniProject"
+        mc:Ignorable="d"
+        Title="AddressWindow" Height="150" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Content="House Number" Grid.Row="0" Grid.Column="0" Margin="5 5 5 5" />
+        <TextBox x:Name="houseNumberTextBox" Grid.Row="0" Grid.Column="1" Margin="5 5 5 5" />
+
+        <Label Content="Postcode" Grid.Row="1" Grid.Column="0" Margin="5 5 5 5" />
+        <TextBox x:Name="postcodeTextBox" Grid.Row="1" Grid.Column="1" Margin="5 5 5 5" />
+
+        <Button x:Name="add" Content="Add" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="5 5 5 5" Click="add_Click" />
+    </Grid>
+</Window>
