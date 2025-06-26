@@ -1,0 +1,119 @@
+To build a small, 2 player console game that has its roots in the game Battleship.
+There will be a 25-spot grid (A1 - E5).
+Each player will place 5 pegs on the board to represent 5 ships.
+Players then take turns firing on their opponents ships.
+The first person to sink all 5 ships wins.
+
+W - Walk through the project
+1) Open the game
+2) Have player 1 set 5 ships
+3) Have player 2 set 5 ships
+4) Player 1 choses a location to fire at
+	a) If it hits, sink a ship
+	b) If it misses, move to player 2
+5) Player 2 choses a location to fire at
+	a) If it hits, sink a ship
+	b) If it misses, move to player 1
+6) Repeat steps 4 and 5 until a player hits the last ship
+7) Accounce the winner
+8) Exit the application
+
+O - Open up the requirements
+Additional questions
+1 console or 2? 1
+Get an extra turn if a ship is hit? No
+Turn time limit? No
+Give stats? Turns to win
+Do we show a visual of the grid? Yes
+Can a play shoot the same spot more than once? No
+Play against CPU? Maybe
+
+Full requirements
+2 player game
+1 console
+25 spot grid
+5 ships each
+A ship takes up 1 spot
+Players take turns firing
+Shot a visual of the grid, hits, and misses
+Can't shoot the same spot twice
+A player wins after hitting the last ship
+Loser gets a redemtion shot if also on 4 hits
+
+U - User interface design
+Welcome message
+Ask for player 1
+	Name
+	Ship placement
+Ask for player 2
+	Name
+	Ship placement
+Display grid
+Ask for player 1 shot
+	Check if valid placement
+	Check if hit or miss
+	Store shot
+	Display grid
+	Check if game won
+	Clear grid
+Repeat above for player 2
+Loop until someone wins
+Display victory message
+Close the application
+
+Start
+ ABCDE
+1~~~~~
+2~~~~~
+3~~~~~
+4~~~~~
+5~~~~~
+
+Placing a ship
+ ABCDE
+1~~~~~
+2~~~S~
+3~~~~~
+4~~~~~
+5~~~~~
+
+After a hit
+ ABCDE
+1~~~~~
+2~X~~~
+3~~~~~
+4~~~~~
+5~~~~~
+
+After a miss
+ ABCDE
+1~~~~~
+2~X~~~
+3~~~~~
+4~~~O~
+5~~~~~
+
+L - Logic design
+Method - Get player name
+Method - Place ship
+Method - Get player shot
+Method - Validate shot
+Method - Create grid
+Method - Display grid
+Method - Clear display
+Method - Display score
+Method - Print winner and shots taken
+Store - Player name
+Store - Ship placement
+Store - Shot history
+
+D - Data design
+PlayerInfo
+	Player's name - String
+	Player's ship placement - List<GridSpot>
+	Player's shots - List<GridSpot>
+
+GridSpot
+	Spot letter - String
+	Spot number - Int
+	Status - String
