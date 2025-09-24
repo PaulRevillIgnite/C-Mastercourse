@@ -1,8 +1,8 @@
 ﻿using DataAccessLibrary;
-using Microsoft.Extensions.Configuration;
 using DataAccessLibrary.Models;
+using Microsoft.Extensions.Configuration;
 
-SqlCrud sql = new SqlCrud(GetConnectionString());
+SQLiteCrud sql = new SQLiteCrud(GetConnectionString());
 
 ReadAllContacts(sql);
 
@@ -14,16 +14,16 @@ ReadAllContacts(sql);
 
 //RemovePhoneNumberFromContact(sql, 15, 1);
 
-Console.WriteLine("Finished SQL Server");
+Console.WriteLine("Finished SQLite");
 
 Console.ReadLine();
 
-static void RemovePhoneNumberFromContact(SqlCrud sql, int contactId, int phoneNumberId)
+static void RemovePhoneNumberFromContact(SQLiteCrud sql, int contactId, int phoneNumberId)
 {
     sql.RemovePhoneNumberFromContact(contactId, phoneNumberId);
 }
 
-static void UpdateContact(SqlCrud sql)
+static void UpdateContact(SQLiteCrud sql)
 {
     BasicContactModel contact = new BasicContactModel
     {
@@ -35,7 +35,7 @@ static void UpdateContact(SqlCrud sql)
     sql.UpdateContactName(contact);
 }
 
-static void CreateNewContact(SqlCrud sql)
+static void CreateNewContact(SQLiteCrud sql)
 {
     FullContactModel user = new FullContactModel()
     {
@@ -55,7 +55,7 @@ static void CreateNewContact(SqlCrud sql)
     sql.CreateContact(user);
 }
 
-static void ReadAllContacts(SqlCrud sql)
+static void ReadAllContacts(SQLiteCrud sql)
 {
     var rows = sql.GetAllContacts();
 
@@ -65,7 +65,7 @@ static void ReadAllContacts(SqlCrud sql)
     }
 }
 
-static void ReadContact(SqlCrud sql, int contactId)
+static void ReadContact(SQLiteCrud sql, int contactId)
 {
     var contact = sql.GetFullContactById(contactId);
 
