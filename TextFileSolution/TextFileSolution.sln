@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36408.4 d17.14
+VisualStudioVersion = 17.14.36408.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextFileUI", "TextFileUI\TextFileUI.csproj", "{ECFD0396-1BE7-4661-A18F-8ED10A271E04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLibrary", "DataAccessLibrary\DataAccessLibrary.csproj", "{265734CE-531F-4085-A877-702CCC4109A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{ECFD0396-1BE7-4661-A18F-8ED10A271E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECFD0396-1BE7-4661-A18F-8ED10A271E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECFD0396-1BE7-4661-A18F-8ED10A271E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{265734CE-531F-4085-A877-702CCC4109A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{265734CE-531F-4085-A877-702CCC4109A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{265734CE-531F-4085-A877-702CCC4109A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{265734CE-531F-4085-A877-702CCC4109A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
