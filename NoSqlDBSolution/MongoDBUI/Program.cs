@@ -21,7 +21,7 @@ user.PhoneNumbers.Add(new PhoneNumberModel { PhoneNumber = "07111111111" });
 
 CreateContact(user);
 
-//GetAllContacts();
+GetAllContacts();
 
 //GetContactById("");
 
