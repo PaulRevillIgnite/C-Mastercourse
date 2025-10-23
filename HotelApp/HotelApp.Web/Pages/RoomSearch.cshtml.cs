@@ -2,12 +2,18 @@ using HotelAppLibary.Data;
 using HotelAppLibary.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace HotelApp.Web.Pages
 {
     public class RoomSearchModel : PageModel
     {
+        private readonly IDatabaseData _db;
+
         [DataType(DataType.Date)]
         [BindProperty(SupportsGet = true)]
         public DateTime StartDate { get; set; } = DateTime.Now;
@@ -17,10 +23,9 @@ namespace HotelApp.Web.Pages
         public DateTime EndDate { get; set; } = DateTime.Now.AddDays(1);
 
         [BindProperty(SupportsGet = true)]
-        public bool SearchEnabled { get; set; }
+        public bool SearchEnabled { get; set; } = false;
 
-        public List<RoomTypeModel> AvaliableRoomTypes { get; set; }
-        public IDatabaseData _db { get; }
+        public List<RoomTypeModel> AvailableRoomTypes { get; set; }
 
         public RoomSearchModel(IDatabaseData db)
         {
@@ -31,13 +36,18 @@ namespace HotelApp.Web.Pages
         {
             if (SearchEnabled == true)
             {
-                AvaliableRoomTypes = _db.GetAvaliableRoomTypes(StartDate, EndDate);
+                AvailableRoomTypes = _db.GetAvaliableRoomTypes(StartDate, EndDate);
             }
         }
 
         public IActionResult OnPost()
         {
-            return RedirectToPage(new { SearchEnabled = true, StartDate, EndDate });
+            return RedirectToPage(new
+            {
+                SearchEnabled = true,
+                StartDate = StartDate.ToString("yyyy-MM-dd"),
+                EndDate = EndDate.ToString("yyyy-MM-dd")
+            });
         }
     }
 }
