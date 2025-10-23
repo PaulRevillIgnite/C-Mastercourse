@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36603.0 d17.14
+VisualStudioVersion = 17.14.36603.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HotelAppDB", "HotelAppDB\HotelAppDB.sqlproj", "{856A69DE-F49C-476F-BFB6-26AC2FA718EE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelAppLibary", "DataAccess\HotelAppLibary.csproj", "{5080E592-A60A-427C-9F11-3891EF7178A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelApp.Web", "HotelApp.Web\HotelApp.Web.csproj", "{319853C3-4F5C-4CBF-9CC6-3E373FF4A278}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{5080E592-A60A-427C-9F11-3891EF7178A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5080E592-A60A-427C-9F11-3891EF7178A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5080E592-A60A-427C-9F11-3891EF7178A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{319853C3-4F5C-4CBF-9CC6-3E373FF4A278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{319853C3-4F5C-4CBF-9CC6-3E373FF4A278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{319853C3-4F5C-4CBF-9CC6-3E373FF4A278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{319853C3-4F5C-4CBF-9CC6-3E373FF4A278}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
