@@ -6,7 +6,7 @@ AS
 begin
 	set nocount on;
 
-	SELECT B.*, G.FirstName, G.LastName, R.RoomTypeId, RT.Title, RT.Description, RT.Price
+	SELECT B.*, G.FirstName, G.LastName, R.RoomTypeId, R.RoomNumber, RT.Title, RT.Description, RT.Price
 	FROM dbo.Bookings B
 		INNER JOIN dbo.Guests G on B.GuestId = G.Id
 		INNER JOIN dbo.Rooms R on B.RoomId = R.Id

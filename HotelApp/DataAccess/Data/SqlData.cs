@@ -70,7 +70,7 @@ namespace HotelAppLibary.Data
                                                    true);
         }
 
-        public void CheckIn(int bookingId)
+        public void CheckInGuest(int bookingId)
         {
             db.SaveData("dbo.[spBookings_CheckIn]", new { Id = bookingId }, connectionStringName, true);
         }
