@@ -37,6 +37,7 @@ namespace HotelApp.Web.Pages
 
         public void OnGet()
         {
+
             if (RoomTypeId > 0)
             {
                 RoomType = _db.GetRoomTypeById(RoomTypeId);

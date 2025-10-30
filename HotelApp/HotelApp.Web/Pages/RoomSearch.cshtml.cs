@@ -38,6 +38,9 @@ namespace HotelApp.Web.Pages
             {
                 AvailableRoomTypes = _db.GetAvaliableRoomTypes(StartDate, EndDate);
             }
+
+            this.StartDate = StartDate;
+            this.EndDate = EndDate;
         }
 
         public IActionResult OnPost()

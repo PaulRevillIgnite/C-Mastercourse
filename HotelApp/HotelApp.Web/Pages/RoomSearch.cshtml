@@ -37,12 +37,15 @@
                     <td>
                         <strong>@room.Title</strong><br />
                         @room.Description
+                        @Model.StartDate
+                        @Model.EndDate
                     </td>
                     <td>@string.Format("{0:C}", room.Price)</td>
                     <td>
-                        <a asp-page="/BookRoom" asp-route-roomtypeid="@room.Id"
-                           asp-route-startdate="@Model.StartDate.ToShortDateString()"
-                           asp-route-enddate="@Model.EndDate.ToShortDateString()">Book Now</a>
+                        <a asp-page="/BookRoom"
+                           asp-route-roomtypeid="@room.Id"
+                           asp-route-startdate="@Model.StartDate.ToString("yyyy-MM-dd")"
+                           asp-route-enddate="@Model.EndDate.ToString("yyyy-MM-dd")">Book Now</a>
                     </td>
                 </tr>
             }
