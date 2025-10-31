@@ -82,7 +82,11 @@ namespace HotelAppLibary.Data
 
         public void CheckInGuest(int bookingId)
         {
-            throw new NotImplementedException();
+            string sql = @"update Bookings
+	                        set CheckedIn = 1
+	                        where Id = @Id;";
+
+            _db.SaveData(sql, new { Id = bookingId }, connectionStringName);
         }
 
         public List<RoomTypeModel> GetAvaliableRoomTypes(DateTime startDate, DateTime endDate)
