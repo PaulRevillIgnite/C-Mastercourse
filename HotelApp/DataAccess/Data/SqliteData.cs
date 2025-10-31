@@ -122,7 +122,24 @@ namespace HotelAppLibary.Data
 
         public List<BookingFullModel> SearchBookings(string lastName)
         {
-            throw new NotImplementedException();
+            string sql = @"SELECT B.*, G.FirstName, G.LastName, R.RoomTypeId, R.RoomNumber, RT.Title, RT.Description, RT.Price
+	                    FROM Bookings B
+		                    INNER JOIN Guests G on B.GuestId = G.Id
+		                    INNER JOIN Rooms R on B.RoomId = R.Id
+		                    INNER JOIN RoomTypes RT on R.RoomTypeId = rt.Id
+	                    WHERE G.LastName = @lastName
+		                    AND B.StartDate = @startDate";
+
+            var output = _db.LoadData<BookingFullModel, dynamic>(sql,
+                                                   new { lastName, startDate = DateTime.Now.Date },
+                                                   connectionStringName);
+
+            output.ForEach(x => {
+                x.Price = x.Price / 100;
+                x.TotalCost = x.TotalCost / 100;
+            });
+            
+            return output;
         }
     }
 }
